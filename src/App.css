@@ -63,6 +63,8 @@ form input {
   border: none;
   background: transparent;
   color: #222731;
+  font-size: 18px;
+  line-height: 25px;
 }
 .form_left {
   display: flex;
