@@ -30,6 +30,7 @@ function App() {
   };
   const toggleTheme = () => {
     setTheme(theme === 'DARK' ? 'LIGHT' : 'DARK');
+    document.body.classList.toggle('light');
   };
 
   function formatDate(dateString) {
@@ -43,15 +44,16 @@ function App() {
   
 
   return (
-    <main>
+    <main className={`main-container ${theme.toLowerCase()}`}>
       <div className='top'>
         <h3>divfinder</h3>
         <button className='theme_btn' onClick={toggleTheme}>
-          <span className='theme'>DARK</span>
+          <span className='theme'>{theme === 'DARK' ? "DARK" : "LIGHT"}</span>
           <img src={theme === 'DARK' ? Moon : Sun} alt="Theme icon" />
         </button>
       </div>
       <form onSubmit={handleSubmit} className="search_container">
+        <div className="form_left">
         <img src="/icon-search.svg" alt="" />
         <input
           type="text"
@@ -59,6 +61,7 @@ function App() {
           value={search}
           onChange={handleChange}
         />
+        </div>
         {error && <span className="error-message">No results</span>} 
         <button type="submit">Search</button>
       </form>
@@ -69,14 +72,14 @@ function App() {
             <img src={userData.avatar_url} alt="" />
             <div className="card-top-middle">
               <h2 className="name">{userData.name}</h2>
-              <span className="link">{userData.login}</span>
+              <span className="login">{userData.login}</span>
               <p className="bio">{userData.bio ? userData.bio : "This profile has no bio"}</p>
             </div>
             <div className="card-top-right">
               <span className="date">Joined {formatDate(userData.created_at)}</span>
             </div>
           </div>
-          <div className="card_middle">
+          <div className={`card_middle${theme === 'LIGHT' ? ' light' : ''}`}>
             <div className="repos_container column">
               <span className='reposText'>Repos</span>
               <span className="reposNum">{userData.public_repos}</span>

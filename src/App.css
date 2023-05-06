@@ -1,3 +1,19 @@
+body.light {
+  background-color: #fafafa;
+  color: #333333;
+}
+
+body.dark {
+  background-color: #141d2f;
+  color: #ffffff;
+}
+body.dark-theme .todos_container {
+  background-color: #25273d;
+}
+body.dark-theme .input_container {
+  background-color: #25273d;
+}
+
 main {
   width: 730px;
 }
@@ -19,6 +35,10 @@ main {
   gap: 16px;
   align-items: center;
 }
+.light .theme {
+  color: white;
+}
+
 .theme_btn span {
   color: #697c9a;
   font-weight: 700;
@@ -41,6 +61,13 @@ form {
 form input {
   width: 260px;
   border: none;
+  background: transparent;
+  color: #222731;
+}
+.form_left {
+  display: flex;
+  align-items: center;
+  gap: 26px;
 }
 form .error-message {
   color: red;
@@ -69,12 +96,28 @@ form button {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
+  align-items: start;
 }
 .card-top img {
   width: 117px;
   height: 117px;
   border-radius: 50%;
+}
+.card-top-top {
+  display: flex;
+  flex-direction: row;
+}
+.name {
+  color: #2b3442;
+}
+.light .name {
+  color: #ffffff;
+}
+.login {
+  color: #0079ff;
+}
+.bio {
+  margin-top: 20px;
 }
 .card_middle {
   width: 480px;
@@ -105,4 +148,49 @@ form button {
 .location_container,
 .tweeter-container {
   margin-bottom: 15px;
+}
+
+.main-container.light {
+  /* Define light mode text color */
+
+  /* Define light mode background color */
+  background-color: #141d2f;
+}
+
+.main-container.light .top h3 {
+  color: white;
+}
+
+.main-container.light .search_container,
+.main-container.light .card {
+  background-color: #1e2a47;
+}
+.card_middle.light {
+  background-color: #141d2f;
+}
+.light .search_container input {
+  color: white;
+}
+
+.search_container input::placeholder {
+  color: #4b6a9b;
+}
+
+/* Light mode placeholder color */
+.light .search_container input::placeholder {
+  color: white;
+}
+.search_container input:focus {
+  outline: none;
+  border: none;
+}
+form button:hover {
+  background: #60abff;
+  cursor: pointer;
+}
+
+.theme_btn:hover {
+  cursor: pointer;
+  opacity: 0.8;
+  transition: opacity 0.3s;
 }
