@@ -42,6 +42,12 @@ form input {
   width: 260px;
   border: none;
 }
+form .error-message {
+  color: red;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 22px;
+}
 form button {
   width: 106px;
   height: 50px;
@@ -69,4 +75,34 @@ form button {
   width: 117px;
   height: 117px;
   border-radius: 50%;
+}
+.card_middle {
+  width: 480px;
+  height: 85px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #f6f8ff;
+  padding: 15px 83px 17px 32px;
+  margin-left: 154px;
+  margin-bottom: 37px;
+}
+.column {
+  display: flex;
+  flex-direction: column;
+}
+.card_bottom {
+  display: flex;
+  flex-direction: row;
+  margin-left: 154px;
+  gap: 20px;
+  align-items: center;
+}
+.card_bottom img {
+  margin-right: 20px;
+}
+.location_container,
+.tweeter-container {
+  margin-bottom: 15px;
 }
